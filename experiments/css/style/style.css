@@ -1,0 +1,35 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #edaa7d; }
+
+header {
+  margin: 0 0 30px 0;
+  padding: 10px;
+  color: #edaa7d;
+  background-color: #c65453; }
+  header h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2em; }
+
+h2 {
+  margin: 10px;
+  font-size: 1em; }
+
+section {
+  background-color: #ffddb4;
+  width: 700px;
+  margin: 20px auto;
+  padding: 15px; }
+  @media (max-width: 778px) {
+    section {
+      width: 90%; } }
+
+#waffles {
+  color: #c65453;
+  background-color: #c6b599;
+  font-family: 'American Typewriter', Times, serif; }
+
+.cookies {
+  color: #0e6870; }
