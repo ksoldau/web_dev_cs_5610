@@ -1,0 +1,32 @@
+.square {
+  width: 400px;
+  height: 400px;
+}
+.background-example {
+  padding: 5px 10px 25px 10px;
+}
+.background-example:nth-child(2n) 
+{
+  background-color: #bbb;
+}
+
+#one {
+  background-color: #732;
+}
+
+.background-image {
+  background-image: url('http://colrd.com/misc/library/pattern/DinPattern/horton.gif');
+}
+
+.no-repeat {
+  background-repeat: no-repeat;
+  background-color: #444;
+}
+.repeat-x {
+  background-repeat: repeat-x;
+  background-color: #444;
+}
+.repeat-y {
+  background-repeat: repeat-y;
+  background-color: #444;
+}
