@@ -13,6 +13,9 @@
 <meta charset='utf-8' />
 
 <title>Katie Soldau CS5610</title>
+<link rel="stylesheet" type="css/text" href="css/homepage.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
 
 <style type="text/css">
     ul.master_navigation
@@ -21,7 +24,7 @@
         font-weight: bold;
         text-align: center;
         list-style: none;
-        margin: 0.5em 0;
+        margin: 10px 0; /* I cahnged it from 0.5em 0 */
         padding: 0;
     }
 
@@ -33,7 +36,7 @@
 
     a
     {
-        color: #08f;
+        color: #FFF; /*I changed it from #08f*/
         font-weight: bold;
         text-decoration: none;
     }
@@ -45,7 +48,7 @@
 
     a:hover
     {
-        color: #f00;
+        color: #FF712C; /* I changed from f00 */
     }
 
     p
@@ -58,12 +61,12 @@
     body {
         width:900px;
         max-width: 100%;
-        margin: 0;
+        margin: 0 auto; /* I added in the auto */
         padding: 0;
     }
 
     .pad {
-        padding: 10px;
+        /*padding: 10px; I commented this out */
     }
 </style>
 
@@ -75,9 +78,12 @@
 
 <form id="form1" runat="server">
 
+<header>
+<a href="Default.aspx" id="page-title"><h1>Katie Soldau CS5610</h1></a>
 <div>
 
 <ul class="master_navigation">
+    <li><a href="experiments/" target="_blank">Experiments</a></li>
     <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
     <li><a href="statistics/" target="_blank">Statistics</a></li>
     <li><a href="source/" target="_blank">Source</a></li>
@@ -89,34 +95,37 @@
     <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
     <li><a href="blog/" target="_blank">Blog</a></li>
 </ul>
-
-<hr />
-
-<p>
-    <b>This demo page shows the navigation links that should appear
-    on the home page.</b>
-    It is not necessary that these links be at the top of the page
-    but they should be displayed nicely and be easy to find.  You
-    may alter the CSS on the page to change the placement and the
-    size of the links.
-</p>
-
-<hr />
+</header>
 
 <p>
-    The home page may show some interesting content but its main
-    purpose should be to <i>provide navigation</i> to other pages
-    on your site.
+Hello, my name is Katie Soldau. I'm from New Hampshire and am currently an undergraduate in my third year. I'm dual majoring in Computer Science and Interactive Media and minoring in Film Production.
+I am interested in Web Development, User Interface Development, and Software Development. In general, I am a big fan of combining the areas of art and technology.
 </p>
 
-<hr />
+<img src="images/bio_picture.jpeg" id="bio_picture">
 
 <p>
-    It would be helpful if your home page shows your name and a
-    photo of yourself.  This will help us to get to know you. 
+In CS 5610 I hope to learn about all aspects of Web Development. 
+I worked as a web developer intern this summer at a small company in Boston.
+At that internship I worked with the Ruby on Rails framework, so much of my knowledge base extends around that. 
+Current knowledge:
+<ul>
+<li>basic HTML, CSS, jQuery, JavaScript</li>
+<li>barely anything about databases</li>
+<li>a little about the MVC pattern</li>
+<li>a little about controllers</li>
+<li>a little about various aspects of full-stack development</li>
+</ul>
+I hope to greatly expand on my knowledge and become more comfortable with building dynamic websites by the end of this course.
 </p>
+
+<hr class="clear-float"/> 
+
+<p><h2>Project</h2>I have not completely made up my mind, but for my project I might build something that deals with recipes. I'm a little interested in building a site that allows you to save recipes you like, easily sort through these recipes, and find recipes based on the ingredients you have available.</p>
+
+<hr />
+<h2> Links I don't want to lose yet: </h2>
     
-<hr />
 
 <p>
 Here is a link to the
@@ -134,13 +143,6 @@ so that you may see a good collection of online documentation.
 <p>
 This provides a model for using stories for documentation and
 for collections of experiments.
-</p>
-
-<hr />
-
-<p>
-None of the hints given above needs to be on your home page
-downstream but it is convenient to have them here at startup.
 </p>
 
 <hr />

@@ -1,0 +1,49 @@
+﻿/*medium E3DEC1
+dark 683309
+light E9E2C5
+orange B94629
+blue  47AFAF */
+body 
+{
+    font-family: 'Open Sans', Sans-Serif;
+    background-color: #E9E2C5;
+    color: #683309;
+    margin: 0;
+    padding: 10px;
+}
+header 
+{
+    background-color: #B94629;
+    color: #fff;
+    margin: 0 auto;
+    padding: 0 0 5px 0;
+    overflow: auto;
+}
+a#page-title 
+{
+    color: #fff;
+}
+hr 
+{
+    border-color: #CFC291;
+}
+#page-title 
+{
+    text-align: center;
+}
+#bio_picture 
+{
+    float: right;
+    width: 300px;
+    height: 300px;
+    margin: 0 20px 20px 40px;
+    border: 10px solid #47AFAF;
+}
+hr 
+{
+    clear: both;
+}
+h1 
+{
+    margin: 0 auto auto auto;
+}
