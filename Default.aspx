@@ -121,7 +121,7 @@ I hope to greatly expand on my knowledge and become more comfortable with buildi
 
 <hr class="clear-float"/> 
 
-<p><h2>Project</h2>I have not completely made up my mind, but for my project I might build something that deals with recipes. I'm a little interested in building a site that allows you to save recipes you like, easily sort through these recipes, and find recipes based on the ingredients you have available.</p>
+<p><h2>Project</h2>I have not completely made up my mind, but for my project I might build something that deals with recipes. I'm a little interested in building a site that allows you to save recipes you like, easily sort through these recipes, and find recipes based on the ingredients you have available. Another idea I have (I'm actually learning more towards this one) is to create a website that has tabs and chords for the ukulele. It could have users submit new tabs, keep lists of tabs of popular songs, etc.</p>
 
 <hr />
 <h2> Links I don't want to lose yet: </h2>
