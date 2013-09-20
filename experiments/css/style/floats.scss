@@ -1,0 +1,38 @@
+body {
+  font-family: Verdana, sans-serif;
+}
+p {
+  clear: both;
+}
+
+.float_example {
+  margin: 10px auto 10px auto;
+  padding: 0 2% 2% 2%;
+  overflow: auto;
+  width: 96%;
+ 
+}
+.float_example:nth-child(2n) {
+  background-color: #bbb;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+}
+
+.blue {
+  background-color: #4444FF;
+}
+
+.pink {
+  background-color: #FF70A8; 
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}

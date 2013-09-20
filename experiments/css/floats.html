@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" type="css/text" href="style/floats.css">
+</head>
+<body>
+<section>
+<div class="float_example">
+<h2>How to clear floats</h2>
+<p>Why do floats need to be cleared?<p>
+<p>Sometimes containers don't expand to fit it. This can result in layout that you want to be underneath a floated object to creep up next to it.</p>
+<p>How to clear a float:
+put the following CSS in the float's container:<br>
+<code>.float-container {
+  overflow: auto;
+  width: 100%;
+}</code><br><br>
+or add the CSS <code>clear: both</code> to a tag so it clears the floats
+</p>
+</div>
+<div class='float_example'>
+<h2>No float styling</h2>
+<p>Below is what happens when you don't float either square. (The default float value is 'none.')
+<p>the HTML:<br>
+<code>
+&lt;div class="square blue"&gt;&lt;/div&gt;<br>
+&lt;div class="square pink"&gt;&lt;/div&gt;"
+</code>
+</p>
+<p>the CSS:<br>
+<code>
+.square {
+  width: 100px;
+  height: 100px;
+}
+<br>
+.blue {
+  background-color: #4444FF;
+}
+<br>
+.pink {
+  background-color: #FF70A8; 
+}
+</code>
+
+
+</p>
+
+<div class="square blue"></div>
+<div class="square pink"></div>
+</div>
+<div class="float_example">
+<h2>Float right</h2>
+<p>Below is what happens when you float the blue square to the right and do not float the pink square and the blue square is coded on top of the pink square.
+Notice that the blue square does not stay above the pink square. Since the blue square is floated to the right 
+(Since the pink square is not floated, it's float value is the default value 'none.'</p>
+<p>the HTML:<br>
+<code>
+&lt;div class="square blue float-right"&gt;&lt;/div&gt; <br>
+&lt;div class="square pink"&gt;&lt;/div&gt;
+</code>
+</p>
+<p>the CSS:<br>
+<code>
+.square {
+  width: 100px;
+  height: 100px;
+}
+<br>
+.blue {
+  background-color: #4444FF;
+}
+<br>
+.pink {
+  background-color: #FF70A8; 
+}
+<br>
+.float-right {
+  float: right;
+}
+</code>
+</p>
+<div class="square blue float-right"></div>
+<div class="square pink"></div>
+<p>Below: Two divs. First div has default float, second is floated to the right. Notice that the blue square stays above the pink square. Floats needed to be cleared after this one.</p>
+<p>the HTML: <br>
+<code>
+&lt;div class="square blue"&gt;&lt;/div&gt; <br>
+&lt;div class="square pink float-right"&gt;&lt;/div&gt;
+</code>
+</p>
+<p>the CSS: <br>
+<code>
+.square {
+  width: 100px;
+  height: 100px;
+}
+<br>
+.blue {
+  background-color: #4444FF;
+}
+<br>
+.pink {
+  background-color: #FF70A8; 
+}
+<br>
+.float-right {
+  float: right;
+}
+</code>
+<div class="square blue"></div>
+<div class="square pink float-right"></div>
+<p>Below: both squares floated to the right. </p>
+<p>the HTML: <br>
+<code>
+&lt;div class="square blue float-right"&gt;&lt;/div&gt;<br>
+&lt;div class="square pink float-right"&gt;&lt;/div&gt;
+</code>
+<p>the CSS: <br>
+<code>
+.square {
+  width: 100px;
+  height: 100px;
+}
+<br>
+.blue {
+  background-color: #4444FF;
+}
+<br>
+.pink {
+  background-color: #FF70A8; 
+}
+<br>
+.float-right {
+  float: right;
+}
+</code>
+
+<div class="square blue float-right"></div>
+<div class="square pink float-right"></div>
+</div>
+<div class="float_example">
+<h2>Float left</h2>
+<p>Blue floated to the left, pink with default float. Pink ends up beneath the blue one.</p>
+<p>the HTML:<br>
+<code>
+&lt;div class="square blue float-left"&gt;&lt;/div&gt;<br>
+&lt;div class="square pink"&gt;&lt;/div&gt;
+</code>
+</p>
+<p>the CSS:<br>
+<code>
+.square {
+  width: 100px;
+  height: 100px;
+}
+<br>
+.blue {
+  background-color: #4444FF;
+}
+<br>
+.pink {
+  background-color: #FF70A8; 
+}
+<br>
+.float-left{
+  float: left;
+}
+</code>
+</p>
+<div class="square blue float-left"></div>
+<div class="square pink"></div>
+<p>Pink floated to the left, blue with default float.</p>
+<p>the HTML:<br>
+<code>
+&lt;div class="square blue"&gt;&lt;/div&gt;<br>
+&lt;div class="square pink float-left"&gt;&lt;/div&gt;
+</code>
+</p>
+<p>the CSS:<br>
+<code>
+.square {
+  width: 100px;
+  height: 100px;
+}
+<br>
+.blue {
+  background-color: #4444FF;
+}
+<br>
+.pink {
+  background-color: #FF70A8; 
+}
+<br>
+.float-left{
+  float: left;
+}
+</code>
+</p>
+<div class="square blue"></div>
+<div class="square pink float-left"></div>
+
+<p>Both squares floated to the left. Blue goes as far as it can go to the left, then pink goes as far as it can go.</p>
+<p>the HTML: <br>
+<code>
+&lt;div class="square blue float-left"&gt;&lt;/div&gt;<br>
+&lt;div class="square pink float-left"&gt;&lt;/div&gt;
+</code>
+</p>
+<p>the CSS: <br>
+<code>
+.square {
+  width: 100px;
+  height: 100px;
+}
+<br>
+.blue {
+  background-color: #4444FF;
+}
+<br>
+.pink {
+  background-color: #FF70A8; 
+}
+<br>
+.float-left{
+  float: left;
+}
+
+</code>
+</p>
+<div class="square blue float-left"></div>
+<div class="square pink float-left"></div>
+</div>
+</section>
+</body>
+</html>
