@@ -1,0 +1,17 @@
+.square {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  float: left;
+  background-color: #363;
+}
+.selected {
+  background-color: #972;
+}
+.clear-ratings {
+  width: 100px;
+  height: 100px;
+  float: left;
+  background-color: #ccc;
+  margin: 10px;
+}
