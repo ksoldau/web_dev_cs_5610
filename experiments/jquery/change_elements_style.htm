@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <script src="jquery/jquery-1.10.2.js"></script>
+ <link rel="stylesheet" href="style/change_elements_style.css">
+ <link rel="stylesheet" href="style/all.css">
+ <script src="js/change_elements_style.js"></script>
+</head>
+<body>
+<h1>Title: Changing element's style with jQuery</h1>
+<h2>Source</h2>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/change_elements_style.htm">HTML</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/style/change_elements_style.css">CSS</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/js/change_elements_style.js">JS/jQuery</a>
+<h2>Purpose</h3>
+<p>To change an element's style using jQuery.I changed margins, background-colors, fonts, font-color, width, height, and position. Also to figure out how to select elements by tag type, class, and id.</p>
+<h2>Experiments</h2>
+<section class="mini-exp">
+<header>
+<h4>Changing an object's margin</h4>
+</header>
+<div id="rectangle"></div>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;div id=&quot;rectangle&quot;&gt;&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+  $("#rectangle").css("margin-left", "200px");
+</code>
+</div>
+</section>
+<section class="mini-exp">
+<header>
+<h4>Changing object's background color</h4>
+</header>
+<div class="box"></div>
+<div class="box"></div>
+<div class="clear-floats"></div>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+  $(".box").css("background-color", "#999");
+</code>
+</div>
+</section>
+<section class="mini-exp">
+<header>
+<h4>Changing an object's font</h4>
+</header>
+<p id="paragraph">This is font that is styled to be a serif font in the stylesheets, but is changed to a sans-serif font with jQuery.</p>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;p id=&quot;paragraph&quot;&gt;This is font that is styled to be a serif font in the stylesheets, but is changed to a sans-serif font with jQuery.&lt;/p&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+  $("#paragraph").css("font-family", "sans-serif");
+</code>
+</div>
+</section>
+<section class="mini-exp">
+<header>
+<h4>Changing an object's font color</h4>
+</header>
+<p id="sentence">This object's font color is #999 in the stylesheet, but set to #900 with jQuery</p>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;p id=&quot;sentence&quot;&gt;This object&apos;s font color is #999 in the stylesheet, but set to #900 with jQuery&lt;/p&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+  $("#sentence").css("color", "#900");
+</code>
+</div>
+</section>
+<section class="mini-exp">
+<header>
+<h4>Changing an object's width and height</h4>
+</header>
+<div id="rectangle2"></div>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;div id=&quot;rectangle2&quot;&gt;&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+  $("#rectangle2").css("width", "200px").css("height", "200px");
+</code>
+</div>
+</section>
+<section class="mini-exp">
+<header>
+<h4>Changing an element's left position when it's absolutely positioned</h4>
+</header>
+<div id="flowers-container">
+<img id="flowers" src="http://icons.mysitemyway.com/wp-content/gallery/glossy-black-icons-natural-wonders/thumbs/thumbs_051369-glossy-black-icon-natural-wonders-flower28-sc44.png"></img>
+</div>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;div id=&quot;flowers-container&quot;&gt;
+&lt;img id=&quot;flowers&quot; src=&quot;http://icons.mysitemyway.com/wp-content/gallery/glossy-black-icons-natural-wonders/thumbs/thumbs_051369-glossy-black-icon-natural-wonders-flower28-sc44.png&quot;&gt;&lt;/img&gt;
+&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+  <header>jQuery:</header>
+  <code class="jquery-code">
+  $("img").css("left", "300px");
+</code>
+</div>
+</section>
+<header>
+<h3>Explanation</h3>
+</header>
+<p>To change an element's style with jQuery I got ahold of the element by the element's class, id, or tag then applied the css function to it. To alter the style I then added the css property in a string as the first argument to the css function and the value as the second argument. </p>
+<p>For example, to alter the background-color of elements with the class of "box" I used this jQuery: </br>
+  <code>$(".box").css("background-color", "#999"); </code>
+  </p>
+<p>The above code grabs the elements with the class of box by<code> $(".box")</code> then applies the css function to it. The first argument to the <code>css</code> function is a string of the property I wanted to alter and the second argument is a string that's the new value I want to give said property.</p>
+
+<p>This process was used for every mini-experiment shown on this page. The only differences in the jQuery was that a different class, id, or tag was grabbed, a different property was given as the first argument to css, and the desired value for said property was given for the second argument to css.</p>
+</p>
+<h3>Bibliography</h3>
+<p>I looked at jQuery's API documentation to see how to use the <code>.css()</code> method. It can be found here: <a href="http://api.jquery.com/css/">http://api.jquery.com/css/</a></p>
+</body>
+</html>

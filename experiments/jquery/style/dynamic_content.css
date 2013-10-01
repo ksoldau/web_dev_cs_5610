@@ -1,0 +1,64 @@
+#make-square-btn {
+
+  background-color: #ccc;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+}
+#make-circle-btn {
+  background-color: #9cc;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  margin: 10px;
+}
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #293;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #938;
+}
+#prepend-section {
+  background-color: #48F;
+  min-height: 100px;
+}
+.rectangle {
+  width: 100px;
+  height: 70px;
+}
+
+#word {
+  background-color: #Fee;
+  padding: 15px;
+  width: 200px;
+  height: 80px;
+  font-size: 2em;
+}
+
+#val-box {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  height: 100px;
+  background-color: #ccc;
+}
+
+.square-1 {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+}
+.square-2 {
+  width: 80px;
+  height: 80px;
+  margin: 10px auto;
+  background-color: #987;
+}
+

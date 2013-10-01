@@ -20,6 +20,6 @@ $(function() {
 });
 // changing the element's left position when it's absolutely positioned
 $(function() {
-  $("#green_box").css("left", "300px");
+  $("img").css("left", "300px");
 });
 

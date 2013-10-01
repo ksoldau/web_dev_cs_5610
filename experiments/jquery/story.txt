@@ -1,0 +1,7 @@
+autocomplete.htm              Autocomplete search
+change_elements_style.htm     Change element's style
+clicking.htm                  Rating system
+sortable_list.htm             Sortable lists
+interactions.htm              Interactions
+widgets.htm                   Widgets
+dynamic_content.htm           Dynamic content

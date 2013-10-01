@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script src="jquery/jquery-1.10.2.js"></script>
+  <script src="jquery/jquery-ui.min.js"></script>
+  <script src="js/sortable_list.js"></script>
+  <link rel="stylesheet" type="text/css" href="style/sortable_list.css">
+  <link rel="stylesheet" type="text/css" href="style/all.css">
+</head>
+<body>
+<h1>Title: Sortable lists</h1>
+<h2>Source</h2>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/sortable_list.htm">HTML</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/style/sortable_list.css">CSS</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/js/sortable_list.js">JS/jQuery</a>
+<h2>Purpose</h2>
+<p>The purpose of this experiment was to figure out how to make sorted lists. I did two types of sorted lists: one where you could move the pieces anywhere (movement not restricted by axis) and one where you could only move the elements in the list up and down.This could be useful if I implement the ability for a user to list their favorite tabs/chord listings.
+</p>
+<h2>Experiments</h2>
+<section class="mini-exp">
+<header>
+<h4>Sortable list</h4>
+</header>
+<ul id="sortable">
+  <li class="song">Somewhere Over the Rainbow</li>
+  <li class="song"></span>Radioactive</li>
+  <li class="song"></span>Highway to Hell</li>
+  <li class="song"></span>Here Comes the Sun</li>
+  <li class="song"></span>Super Bass</li>
+  <li class="song"></span>All Alright</li>
+  <li class="song"></span>Royals</li>
+  <li class="song"></span>Holy Grail</li>
+</ul>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;ul id=&quot;sortable&quot;&gt;
+  &lt;li class=&quot;song&quot;&gt;Somewhere Over the Rainbow&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Radioactive&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Highway to Hell&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Here Comes the Sun&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Super Bass&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;All Alright&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Royals&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Holy Grail&lt;/li&gt;
+&lt;/ul&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$("#sortable").sortable();
+</code>
+</div>
+</section>
+<section class="mini-exp">
+<header>
+<h4>Same list, but only sortable on y axis</h4>
+</header>
+<ul id="sortable-same-axis">
+  <li class="song">Somewhere Over the Rainbow</li>
+  <li class="song"></span>Radioactive</li>
+  <li class="song"></span>Highway to Hell</li>
+  <li class="song"></span>Here Comes the Sun</li>
+  <li class="song"></span>Super Bass</li>
+  <li class="song"></span>All Alright</li>
+  <li class="song"></span>Royals</li>
+  <li class="song"></span>Holy Grail</li>
+</ul>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;ul id=&quot;sortable-same-axis&quot;&gt;
+  &lt;li class=&quot;song&quot;&gt;Somewhere Over the Rainbow&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Radioactive&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Highway to Hell&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Here Comes the Sun&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Super Bass&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;All Alright&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Royals&lt;/li&gt;
+  &lt;li class=&quot;song&quot;&gt;&lt;/span&gt;Holy Grail&lt;/li&gt;
+&lt;/ul&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$("#sortable-same-axis").sortable({"axis" : "y"});
+</code>
+</div>
+</section>
+</body>
+<h2>Explanation</h2>
+<p> 
+To implement these sorted lists I first created unordered lists. I filled in the unordered lists with <code>li</code>s that were song names. In order to make the lists sortable I then applied the jQuery <code>.sortable()</code> function to each. To make the sorted list whose items could only move up and down I added in the argument <code>{"axis" : "y"}</code> to the <code>.sortable()</code> function in order to restrict movement to the y-axis. The styling of the lists was mostly taken from the jQuery UI website.
+</p>
+<h2>Bibliography</h2>
+<p>The CSS of the lists was taken from <a href="http://jqueryui.com/sortable/">http://jqueryui.com/sortable/</a>. I just altered the <code>background-color</code>s a bit. I also used that page as reference to figure out what kind of HTML and jQuery was needed to create sorted lists.
+</body>
+</html>

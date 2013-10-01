@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <script src="jquery/jquery-1.10.2.js"></script>
+ <script src="jquery/jquery-ui.min.js"></script>
+ <link rel="stylesheet" href="style/widgets.css">
+ <link rel="stylesheet" href="style/all.css">
+ <script src="js/widgets.js"></script>
+<link rel="stylesheet" href="jquery/jquery-ui.css">
+</head>
+<body>
+<h1>Title: experiments with jQuery widgets</h1>
+<h2>Source</h2>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/widgets.htm">HTML</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/style/widgets.css">CSS</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/js/widgets.js">JS/jQuery</a>
+<h2>Purpose</h2>
+<p>To use jQuery widgets.</p>
+<h2>Experiments</h2>
+<section class="mini-exp">
+<header><h3>Button</h3></header>
+<button>This is a button with a button tag!</button>
+<input type="submit" value="This is a submit button / input tag!" />
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;header&gt;&lt;h4&gt;Button&lt;/h4&gt;&lt;/header&gt;
+&lt;button&gt;This is a button with a button tag!&lt;/button&gt;
+&lt;input type=&quot;submit&quot; value=&quot;This is a submit button / input tag!&quot; /&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$( "input[type=submit], button" )
+  .button()
+});
+</code>
+</div>
+</section>
+<section class="mini-exp">
+<h3>Automatic Dialog</h3>
+<p>There is a dialog that comes up automatically, below is the code for that:</p>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;div id=&quot;dialog&quot; title=&quot;Are you sure?&quot;&gt;
+&lt;p&gt; This is the dialog that comes up automatically &lt;/p&gt;
+&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQUery:</header>
+<code class="jquery-code">
+$("#dialog").dialog();
+</code>
+</div>
+</section>
+<section class="mini-exp">
+<header><h3>Dialog that opens on click event</h3></header>
+<div id="dialog" title="Are you sure?">
+<p> This is the dialog that comes up automatically </p>
+</div>
+<div class="click-here"><p>Click here to open a dialog</p></div> 
+<div id="click-dialog" title="You clicked to get this">
+<p>You clicked on something to get this</p>
+</div>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;div id=&quot;dialog&quot; title=&quot;Are you sure?&quot;&gt;
+&lt;p&gt; This is the dialog that comes up automatically &lt;/p&gt;
+&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$("#click-dialog").dialog({autoOpen: false});
+$(".click-here").click(function() {
+  $("#click-dialog").dialog('open');
+});
+</code>
+</div>
+</section>
+<section class="mini-exp">
+<h3>Tooltip</h3>
+<label for="email">Your email:</label><input id="email" title="We ask for your email only so that you may reset your password easily if you forget it"\> 
+<p>Hover over the field to see the tooltip!</p>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;label for=&quot;email&quot;&gt;Your email:&lt;/label&gt;&lt;input id=&quot;email&quot; title=&quot;We ask for your email only so that you may reset your password easily if you forget it&quot;\&gt; 
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$(document).tooltip();
+</code>
+</div>
+</section>
+<h2>Explanations</h2>
+<p>To learn how to do these experiments I looked at the widgets on the jQuery UI page (<a href="http://jqueryui.com/">http://jqueryui.com/</a>. To make the buttons I grabbed the DOM elements I wanted then applied the <code>.button()</code> function to them. To make a dialog automatically pop-up I grabbed the dialog by its <code>id</code> then applied the <code>.dialog()</code> function to it. To create a dialog that opened on a click event I grabbed the DOM elements that would be the dialog, applied the <code>.dialog()</code> function to them, then grabbed the element I wanted to be clicked on and made the dialog open on a click event using the <code>.click()</code> and <code>.dialog()</code> functions. To make the dialog open you just pass 'open' in as an argument to <code>.dialog()</code>. To make the tooltip I just created an input that had what I wanted the tooltip to be as the title.</p>
+<h2>Bibliography</h2>
+<p>I referenced the jQuery UI page when writing these functions: <a href="http://jqueryui.com/">http://jqueryui.com/</a>.
+</body>
+</html>

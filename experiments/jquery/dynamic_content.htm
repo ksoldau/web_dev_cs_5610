@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <script src="jquery/jquery-1.10.2.js"></script>
+ <script src="jquery/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="jquery/jquery-ui.css">
+ <script src="js/dynamic_content.js"></script>
+ <link rel="stylesheet" type="text/css" href="style/dynamic_content.css">
+ <link rel="stylesheet" type="text/css" href="style/all.css">
+</head>
+<body>
+<h1>Title: Generating dynamic content with jQuery</h2>
+<h2>Source:</h2>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/dynamic_content.htm">HTML</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/style/dynamic_content.css">CSS</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/js/dynamic_content.js">JS/jQuery</a>
+<div id="append-section">
+<h2>Purpose</h2>
+<p>Generate dynamic content from JavaScript code using functions such as append(), prepend(), html(), and val().</p>
+<h2>Experiments</h2>
+
+<section class="mini-exp">
+<header><h3>Use append</h3></header>
+<a class="tool" id="make-square-btn">Make a square</a>
+<a class="tool" id="make-circle-btn">Make a circle</a>
+
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;div id=&quot;append-section&quot;&gt;
+&lt;a class=&quot;tool&quot; id=&quot;make-square-btn&quot;&gt;Make a square&lt;/a&gt;
+&lt;a class=&quot;tool&quot; id=&quot;make-circle-btn&quot;&gt;Make a circle&lt;/a&gt;
+&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$(".tool").click(controller);
+
+var HTML = {
+    "make-square-btn" : "&lt;div class=&apos;square&apos;&gt;&lt;/div&gt;,",
+    "make-circle-btn" : "&lt;div class=&apos;circle&apos;&gt;&lt;/div&gt;,",
+};
+
+function controller(event) {
+    var link = $(event.currentTarget);
+    var shape = link.attr("id");
+    
+    var html = $(HTML[shape]);
+    html
+        .css({"position" : "absolute", "top" : "100px", "left" : "100px"})
+        .draggable({"grid" : [10,10]});
+    $("#append-section").append(html);
+}
+</code>
+</div>
+
+</div>
+</section>
+
+<section class="mini-exp">
+<h3>Use prepend</h3>
+<a id="new-rect-btn">Click me to prepend a rectangle to this section (background color blue)</a>
+<div id="prepend-section">
+</div>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;a id=&quot;new-rect-btn&quot;&gt;Click me to prepend a rectangle to this section (background color blue)&lt;/a&gt;
+&lt;div id=&quot;prepend-section&quot;&gt;
+&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$("#new-rect-btn").click(prepend_controller).button();
+
+function prepend_controller(event) {
+  var link = $(event.currentTarget);
+  var id = link.attr("id");
+
+  var html = "&lt;div class=&apos;rectangle&apos; style=&apos;background-color:&quot; + &quot;#&quot; + hex() + &quot;;&apos;&gt;&lt;/div&gt;"
+  $("#prepend-section").prepend(html);
+}
+
+function hex() {
+    return ((Math.floor((Math.random()*222)+33).toString(16))+(Math.floor((Math.random()*222)+33).toString(16))+(Math.floor((Math.random()*222)+33).toString(16)).toString(16));
+}
+</code>
+</div>
+</section>
+
+<section class="mini-exp">
+<h3>Change/retrieve html of an element with .html()</h3>
+<p>Click on a word in 'the quick brown fox jumped over the lazy dog' words below to make it show up in the off-white box below.</p>
+<a class="word">the</a>
+<a class="word">quick</a>
+<a class="word">brown</a>
+<a class="word">fox</a>
+<a class="word">jumped</a>
+<a class="word">over</a>
+<a class="word">the</a>
+<a class="word">lazy</a>
+<a class="word">dog</a>
+<div id="word"></div>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;a class=&quot;word&quot;&gt;the&lt;/a&gt;
+&lt;a class=&quot;word&quot;&gt;quick&lt;/a&gt;
+&lt;a class=&quot;word&quot;&gt;brown&lt;/a&gt;
+&lt;a class=&quot;word&quot;&gt;fox&lt;/a&gt;
+&lt;a class=&quot;word&quot;&gt;jumped&lt;/a&gt;
+&lt;a class=&quot;word&quot;&gt;over&lt;/a&gt;
+&lt;a class=&quot;word&quot;&gt;the&lt;/a&gt;
+&lt;a class=&quot;word&quot;&gt;lazy&lt;/a&gt;
+&lt;a class=&quot;word&quot;&gt;dog&lt;/a&gt;
+&lt;div id=&quot;word&quot;&gt;&lt;/div&gt;</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$(".word").click(word_controller);
+
+function word_controller(event) {
+  var link = $(event.currentTarget);
+  var word = link.html();
+  
+  $("#word").html(word);
+}
+</code>
+</div>
+</section>
+
+<section class="mini-exp">
+<h3>Change/retrieve the html using .val()</h3>
+<input type="text" placeholder="Type here!">
+<p>If you type in that input box, it will show up below in all caps</p>
+<div id="val-box">What you type will show here in all caps.</div>
+</div>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;input type=&quot;text&quot; placeholder=&quot;Type here!&quot;&gt;
+&lt;p&gt;If you type in that input box, it will show up below in all caps&lt;/p&gt;
+&lt;div id=&quot;val-box&quot;&gt;What you type will show here in all caps.&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$("input").keyup(function() {
+  var value = $(this).val();
+  $("#val-box").text(value.toUpperCase());
+}).keyup();
+</code>
+</section>
+
+<section class="mini-exp">
+<h3>Clone existing content in DOM then manipulate it dynamically in JavaScript, then add it back to DOM</h3>
+<a id="clone-btn">Clone and have JS manipulate it</a>
+<p>Pressing the above button clones the first square shape in the DOM, randomly selects colors, then prepends it</p>
+<div id="clone-section">
+<div class="square-1"><div class="square-2"></div></div>
+<div class="clear-floats"></div>
+</div>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;a id=&quot;clone-btn&quot;&gt;Clone and have JS manipulate it&lt;/a&gt;
+&lt;p&gt;Pressing the above button clones the first square shape in the DOM, randomly selects colors, then prepends it&lt;/p&gt;
+&lt;div id=&quot;clone-section&quot;&gt;
+&lt;div class=&quot;square-1&quot;&gt;&lt;div class=&quot;square-2&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$("#clone-btn").click(clone_controller).button();
+
+function clone_controller(event) {
+  var link = $(event.currentTarget);
+  var $clone = $($(".square-1").clone().first());
+  
+  // change clone colors
+  $("#clone-section").prepend($clone);
+  $clone.css("background-color", "#" + hex());
+  $clone.find(".square-2").css("background-color", "#" + hex());
+}
+
+function hex() {
+    return ((Math.floor((Math.random()*222)+33).toString(16))+(Math.floor((Math.random()*222)+33).toString(16))+(Math.floor((Math.random()*222)+33).toString(16)).toString(16));
+}
+</code>
+</div>
+</section>
+<h2>Explanations</h2>
+<p><header><h4>Append</h4></header>
+To append a div to the end of a DOM element once a click event has occured I first grabbed all of the elements with the class of <code>tool</code> and attached a click event to them (the controller function). That function then got the element of what triggered the click, took the id from said element, and then used that as a key in the <code>HTML</code> hash to get the new HTML. The HTML to be added was then styled with <code>.css()</code> and appended to the <code>#append-section</code> using the <code>.append()</code> function.</p>
+<p><header><h4>Prepend</h4></header>
+Prepend was accomplished much like append, except the <code>.prepend()</code> function was used instead of the <code>.append()</code> function. 
+</p>
+<p><header><h4>Change/retrieve html of an element with .html()
+</h4></header>
+To change the html of an element with <code>.html()</code> I first grabbed all elements with the class <code>word</code> and attached a click event to it that called a function. This function grabbed the element that caused the click event and took the html() from the element. This html was then subbed into the element with an id of <code>word</code>. The html in the elements with the class <code>word</code> was retrieved and then put into the box below.
+</p>
+<p><header><h4>
+Change/retrieve the html using .val()</h4></header>
+To change and retrieve the html using <code>.val()</code> the input was grabbed with jQuery and the keyup function was applied to it. The function called after a keyup took the value from the input box (what the user had typed) and then inputted it in all uppercase to the div below using the <code>.text()</code> function.
+</p>
+<p><header><h4>Cloning and manipulating</h4></header>
+This was done by attaching a click event to the button with the <code>clone-btn</code> id. The function called once this was clicked on grabbed the element that caused the click, cloned the first element with the class of <code>square-1</code>, prepended this to the <code>#clone-section</code> below, then changed the css of said clone using the <code>.css()</code> and <code>.find()</code> functions. The random hex codes were created using a function that generates random hex codes taken from the source listed in the bibliography. 
+</p>
+
+
+
+<h2>Bibliography</h2>
+<p><ul>
+<li>For the <code>.append()</code> and <code>.prepend()</code> functions I referenced Professor Annunziato's <a href="http://net4.ccs.neu.edu/home/jga/story/index.htm?../experiments/pageEditor/story.txt">page editor</a></li> 
+<li>The jQuery UI <a href="http://api.jquery.com/val/"><code>.val()</code></a>, <a href="http://api.jquery.com/html/"><code>.html()</code></a>, and <a href="http://api.jquery.com/clone/"><code>.code()</code></a> pages were referenced for their respective functions.</li>
+<li>I used a random color generator taken from a<a href="http://stackoverflow.com/questions/13833463/how-do-i-generate-a-random-hex-code-that-of-a-lighter-color-in-javascript
+"> Stack Overflow question</a> in my prepend and clone experiments</li>
+</ul>
+</p>
+</body>
+</html>
+

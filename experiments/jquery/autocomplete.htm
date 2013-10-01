@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <script src="jquery/jquery-1.10.2.js"></script>
+ <script src="jquery/jquery-ui.min.js"></script>
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+ <script src="js/autocomplete.js"></script>
+ <link rel="stylesheet" href="style/all.css">
+</head>
+<body>
+<h1> Title: jQuery search bar with autocomplete </h1>
+<h2>Source</h2>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/autocomplete.htm">HTML</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/style/autocomplete.css">CSS</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/js/autocomplete.js">JS/jQuery</a>
+<h2>Purpose</h2> To figure out how to perform the autocomplete function for search bars. This could be helpful when people search for songs, artists, or albums that they want tabs or chords for </p>
+<h2>Experiment:</h2>
+<section class="mini-exp">
+<div class="search-bar">
+<label for="search">Search: </label>
+<input id="search"/>
+
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;div class=&quot;search-bar&quot;&gt;
+&lt;label for=&quot;search&quot;&gt;Search: &lt;/label&gt;
+&lt;input id=&quot;search&quot;/&gt;
+</code>
+</div>
+<div class="jquery">
+<header>jQuery:</header>
+<code class="jquery-code">
+$.widget( "custom.catcomplete", $.ui.autocomplete, {
+  _renderMenu: function( ul, items ) {
+    var that = this,
+      currentCategory = "";
+    $.each( items, function( index, item ) {
+      if ( item.category != currentCategory ) {
+        ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+        currentCategory = item.category;
+      }
+      that._renderItemData( ul, item );
+    });
+  }
+}); 
+$(function() {
+  var data = artistList().concat(songList().concat(albumList())); 
+  $( "#search" ).catcomplete({
+    delay: 0,
+    source: data
+  });
+});
+
+
+function artistList() {
+  var artistList = ['Lady Gaga', 
+  'fun.', 
+  'Mumford and Sons', 
+  'Journey', 
+  'The Beatles', 
+  'Michael Jackson', 
+  'Rihanna', 
+  'Imagine Dragons', 
+  'MS MR', 
+  'The Killers', 
+  'Kanye West',
+  'Bastille', 
+  'Backstreet Boys'];
+  return makeListOfHashes(artistList, "Artists");
+}
+
+function songList() {
+  var songList = ['I Want It That Way', 
+  'ABC', 
+  'We Are Young', 
+  'Born This Way', 
+  'Babel',
+  "Don't Stop Believin'",
+  'Radioactive', 
+  'Umbrella', 
+  'Thriller', 
+  'Come Together', 
+  'Here Comes the Sun', 
+  'Power',
+  'Over the Rainbow']
+  return makeListOfHashes(songList, "Songs");
+}
+
+function albumList() {
+  var albumList = ['Some Nights', 
+  'Yeezus', 
+  "Sgt. Pepper's Lonely Hearts Club Band", 
+  "Abbey Road", 
+  "Wicked: A New Musical [Original Broadway Cast Recording]"]
+  return makeListOfHashes(albumList, "Albums");
+}
+
+function makeListOfHashes(list, category) {
+  var hashList = [];
+  for(var i = 0; i < list.length; i++) {
+    hashList.push({ label: list[i], category: category });
+  }
+  return hashList;
+}
+</code>
+</div>
+</section>
+
+<h2>Explanation</h2>
+<p>This search bar has a class called search-bar that has a label for 'search' nested inside of it. I looked at the source code from the example on jQuery UI's site and altered the code I saw so that the search results would more mimick things that my project site may ultimately show. In order to do this I abstracted some functions in my JS file. I made a function that could create the necessary hash for each type of listed item (ex: artists, songs, albums) so that I could just pass the necessary list (what would ultimately be the keys) and values.</p>
+</div>
+<h3>Bibliography</h3>
+<ul><li>I referenced code from the autocomplete page on jQuery UI's site: <a href="http://jqueryui.com/autocomplete/">http://jqueryui.com/autocomplete/</li></ul>
+</body>
+</html>

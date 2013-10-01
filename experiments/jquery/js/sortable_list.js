@@ -1,4 +1,4 @@
-  $(function() {
-    $( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
-  });
+$(function() {
+    $("#sortable" ).sortable();
+    $("#sortable-same-axis").sortable({"axis" : "y"});
+});

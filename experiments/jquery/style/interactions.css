@@ -1,0 +1,30 @@
+.draggable {
+  width: 100px;
+  height: 100px;
+  background-color: #392;
+}
+#droppable {
+  margin: 10px;
+  width: 140px;
+  height: 200px;
+}
+.muted-red {
+  background-color: #a44;
+}
+.pure-red {
+  background-color: #f00;
+}
+#resizable-square {
+  width: 100px;
+  height:100px;
+  background-color: #729;
+}
+
+/* selectable CSS taken from http://jqueryui.com/selectable/ */
+
+#selectable { background: #777 }
+#selectable .ui-selecting { background: #ccc; }
+#selectable .ui-selected { background: #dd6; color: white; }
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+

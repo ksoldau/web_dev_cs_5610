@@ -1,21 +1,22 @@
-  #sortable { 
+/*This styling was taken from: http://jqueryui.com/sortable/ and is not my own, I only modified it to use with my classes */
+#sortable, #sortable-same-axis { 
   list-style-type: none; 
   margin: 0; 
   padding: 0; 
   width: 60%; 
   }
-  #sortable li {
+#sortable li, #sortable-same-axis li {
     margin: 0 3px 3px 3px;
     padding: 0.4em; 
     padding-left: 1.5em;
     font-size: 1.4em;
     height: 18px;
   }
-  #sortable li span {
+#sortable li span, #sortable-same-axis li span {
     position: absolute;
     margin-left: -1.3em;
-  }
-
+}
+/* the styling below is my own */
 .song {
   background-color: #7b8;
   cursor: move;

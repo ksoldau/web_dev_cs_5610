@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <script src="jquery/jquery-1.10.2.js"></script>
+ <script src="jquery/jquery-ui.min.js"></script>
+ <script src="js/clicking.js"></script>
+ <link rel="stylesheet" type="text/css" href="style/clicking.css">
+ <link rel="stylesheet" type="text/css" href="style/all.css">
+
+</head>
+<body>
+<h1>Title: Highlight all divs up to the one clicked on</h1>
+<h2>Source:</h2>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/clicking.htm">HTML</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/style/clicking.css">CSS</a>
+<a target="_blank" href="http://net4.ccs.neu.edu/home/ksoldau/fileview/Default.aspx?~/experiments/jquery/js/clicking.js">JS/jQuery</a>
+<h2>Purpose</h2>
+<p>The purpse of this was to find out how to add and remove classes to various divs based on a user's clicks. This could be useful on my site to rate chord listings/tabs</p>
+<h2>Experiment</h2>
+<section class="mini-exp">
+<div class="rating">
+<div class="square one"></div>
+<div class="square two"></div>
+<div class="square three"></div>
+<div class="square four"></div>
+<div class="square five"></div>
+<div class="clear-ratings">clear rating</div>
+<div class="clear-floats"></div>
+<div class="html">
+<header>HTML:</header>
+<code class="html-code">
+&lt;div id=&quot;flowers-container&quot;&gt;
+&lt;img id=&quot;flowers&quot; src=&quot;http://icons.mysitemyway.com/wp-content/gallery/glossy-black-icons-natural-wonders/thumbs/thumbs_051369-glossy-black-icon-natural-wonders-flower28-sc44.png&quot;&gt;&lt;/img&gt;
+&lt;/div&gt;
+</code>
+</div>
+<div class="jquery">
+<code class="jquery-code">
+  $(".square").click(function() {
+    if (!($(this).hasClass("selected"))) { 
+      $(this).addClass("selected");
+      $(this).prevAll().addClass("selected");
+    }
+    else {
+      $(this).nextAll().removeClass("selected");
+    }
+   });
+   $(".clear-ratings").click(function() {
+    $(this).prevAll().removeClass("selected");
+   });
+</code>
+</div>
+</section>
+<h2>Explanation</h2>
+<p>To make the rating system I first made five divs that all had the same class of 'square'. Using jQuery I then grabbed all of those divs and assigned what would happen if any of them were clicked on by using the '.click()' function. If a square is clicked on that does not currently have the class 'selected' applied to it then that square has the class 'selected' applied to it by the <code>.addClass()</code> method and it's made sure that all of the divs before it are also given the 'selected' class by using the <code>.nextAll()</code> and <code>.addClass()</code> methods. If the square that's clicked on already has the 'selected' class applied to it then that square and all of the proceeding squares have the class "selected" removed. That was done using the <code>.prevAll()</code> and <code>.removeClass()</code> functions in jQuery. All of this makes it so that, no matter what square div is clicked on, the squares that appear 'selected' are only the stars preceding and including the last star clicked on. The appearance of the divs with the class 'select' is determined in the CSS by assigning a different <code>background-color</code> to the selected class than the</p>
+<p>The clear rating button works to clear the 'select' class off of all of the previous divs using the <code>.prevAll()</code> and <code>.removeClass()</code> methods.
+<h2>Bibliography</h2>
+<p>I looked at jQuery's API documentation to learn about the <code>.prevAll(), .nextAll(), .addClass(), </code> and <code>.removeClass()</code> methods. The documentation for <code>.prevAll()</code> can be found <a href="http://api.jquery.com/prevall/">here</a>. The documentation for <code>.nextAll()</code> can be found <a href="http://api.jquery.com/nextAll/">here</a>. The documentation for <code>.addClass()</code>. can be found <a href="http://api.jquery.com/addClass/">here</a>. And the documentation for <code>.removeClass()</code> can be found <a href="http://api.jquery.com/removeclass/">here</a>.</p>
+</div>
+</body>
+</html>
